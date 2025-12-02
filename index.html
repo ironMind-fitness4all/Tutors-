@@ -1,374 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>TutorPro — Demo (Premium Tutor Website)</title>
-<meta name="description" content="TutorPro Demo — premium, simple tutor websites with booking, price packages, WhatsApp link, and QR." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutor Website Demo – SA Version</title>
+
 <style>
-  :root{
-    --bg:#f4f7fb; --card:#ffffff; --muted:#65748b;
-    --accent:#0ea5e9; --accent-2:#0f1724; --gold:#f59e0b;
-    --radius:14px; --shadow:0 12px 40px rgba(8,10,30,0.08);
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--accent-2);-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-  header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:linear-gradient(90deg,#071033 0%, #0b2a66 100%);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 6px 24px rgba(2,6,23,0.12)}
-  .brand{display:flex;gap:12px;align-items:center}
-  .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#8be0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#052233}
-  nav{display:flex;gap:12px}
-  nav a{color:rgba(255,255,255,0.95);font-weight:700;padding:8px 10px;border-radius:8px}
-  .container{max-width:1100px;margin:22px auto;padding:0 18px}
-  .hero{display:flex;gap:20px;align-items:center;background:linear-gradient(180deg,#ffffff,#f0f8ff);padding:28px;border-radius:16px;box-shadow:var(--shadow)}
-  .hero-left{flex:1}
-  .hero h1{margin:0;font-size:clamp(20px,3vw,34px)}
-  .hero p{color:var(--muted);margin:10px 0 16px}
-  .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:800;cursor:pointer}
-  .btn-primary{background:var(--accent);color:white;box-shadow:0 10px 30px rgba(14,165,233,0.14)}
-  .btn-ghost{background:transparent;border:2px solid rgba(8,10,30,0.06);color:var(--accent-2)}
-  .hero-right{width:360px;min-width:240px;padding:12px;border-radius:12px;background:linear-gradient(135deg,#eefbff,#ffffff);box-shadow:0 10px 30px rgba(2,6,23,0.04)}
-  .mock-preview{height:220px;border-radius:10px;background:linear-gradient(135deg,#ffffff,#e6f7ff);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted)}
-  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
-  .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow)}
-  .small{color:var(--muted);font-size:0.95rem}
-  .packages{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-  .plan{flex:1;min-width:200px;border-radius:12px;padding:12px;background:linear-gradient(180deg,#fff,#fbfeff);box-shadow:0 8px 22px rgba(2,6,23,0.04)}
-  .price{font-weight:900;font-size:20px;margin-top:8px;color:var(--accent-2)}
-  .features{margin-top:10px;color:var(--muted);line-height:1.45}
-  .mock-image{height:120px;border-radius:10px;background:linear-gradient(135deg,#f3f6fb,#fff);border:2px dashed #e6eef9;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:800}
-  .section-title{display:flex;align-items:center;gap:12px}
-  .dot{width:12px;height:12px;border-radius:3px;background:var(--accent)}
-  .schedule{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:12px}
-  .slot{background:#fbfcff;border-radius:10px;padding:10px;text-align:center;border:1px solid rgba(8,10,30,0.04)}
-  .slot.free{border-color:rgba(34,197,94,0.18)}
-  .slot.taken{border-color:rgba(239,68,68,0.14);opacity:.9}
-  .booking-box{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#fbfdff);box-shadow:0 8px 26px rgba(2,6,23,0.04)}
-  .qr{width:120px;height:120px;border-radius:10px;background:linear-gradient(180deg,#fff,#f2fbff);display:flex;align-items:center;justify-content:center;border:2px dashed #e0f2fe;color:var(--muted);font-weight:900}
-  .testimonials{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-  .test{flex:1;min-width:220px;padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfffb);box-shadow:0 8px 22px rgba(2,6,23,0.04)}
-  footer{margin-top:24px;padding:18px;text-align:center;color:var(--muted)}
-  /* small responsive */
-  @media(max-width:780px){.hero{flex-direction:column}.hero-right{width:100%}}
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f3f3f3;
+        padding-bottom: 60px;
+    }
+
+    header {
+        background: #1565c0; 
+        color: white;
+        text-align: center;
+        padding: 35px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+
+    .section {
+        background: white;
+        margin: 20px;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+        color: #1565c0;
+        margin-top: 0;
+    }
+
+    .demo-start, .demo-end {
+        text-align: center;
+        font-weight: bold;
+        background: #ffeb3b;
+        padding: 12px;
+        margin: 20px;
+        border-radius: 8px;
+        color: #333;
+    }
+
+    .contact-btn, .view-demo-btn {
+        display: block;
+        width: 85%;
+        margin: 20px auto;
+        background: #1565c0;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .payment-box {
+        background: #e8e8e8;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 30px 20px;
+        text-align: center;
+        border: 2px dashed #777;
+    }
+
+    .service-list li {
+        padding: 8px 0;
+    }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="brand">
-    <div class="logo">TP</div>
-    <div style="line-height:1">
-      <div style="font-weight:900">TutorPro</div>
-      <div style="font-size:12px;color:#dbeaf6">Premium Tutor Websites</div>
-    </div>
-  </div>
-  <nav>
-    <a href="#templates">Templates</a>
-    <a href="#packages">Packages</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <h1>South Africa Tutor Website – DEMO</h1>
+    <p>This preview shows the quality of websites I build</p>
 </header>
 
-<main class="container">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-left">
-      <h1>Premium tutor websites that bring you more students</h1>
-      <p class="small">Show your subjects, schedule, packages, client reviews and let students book a trial class via WhatsApp or a booking code. First 5 setups free — R150/month after.</p>
-      <div style="display:flex;gap:10px;margin-top:12px">
-        <button class="btn btn-primary" onclick="scrollTo('#packages')">See Packages</button>
-        <button class="btn btn-ghost" onclick="scrollTo('#schedule')">Generate Booking Code</button>
-      </div>
-      <div style="margin-top:10px;" class="small">Price covers maintenance, image updates, pricing edits, specials/promos, QR, logo & instant support.</div>
-    </div>
+<!-- 🟦 MY SERVICES SECTION AT THE TOP -->
+<div class="section">
+    <h2>My Services</h2>
 
-    <div class="hero-right">
-      <div class="mock-preview">
-        <div style="font-weight:900">Tutor Website Preview</div>
-        <div class="small">Example: Maths • Physical Science • Exam Prep</div>
-        <div style="margin-top:8px">
-          <div class="mock-image" style="height:60px">Logo / Hero Image</div>
-        </div>
-      </div>
+    <ul class="service-list">
+        <li>✔ Full Website Setup</li>
+        <li>✔ Monthly Updates & Maintenance</li>
+        <li>✔ Image & Pricing Updates</li>
+        <li>✔ Bug Fixes</li>
+        <li>✔ QR Code for easy contact</li>
+        <li>✔ Custom Colors & Layout</li>
+        <li>✔ 7-Day Free Trial for New Clients</li>
+    </ul>
 
-      <div style="margin-top:12px">
-        <div style="display:flex;gap:8px">
-          <a class="btn btn-primary" href="https://wa.me/27719756891" target="_blank">Message: 071 975 6891</a>
-          <button class="btn btn-ghost" onclick="downloadMockup('top')">Download Mockup</button>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Jump to demo button -->
+    <a href="#demoStart" class="view-demo-btn">View Demo</a>
+</div>
 
-  <!-- TEMPLATES / FEATURES -->
-  <section id="templates" style="margin-top:18px">
-    <div class="card">
-      <div class="section-title"><div class="dot"></div><h3 style="margin:0">What tutors get</h3></div>
-      <div style="margin-top:12px" class="grid-3">
-        <div class="card">
-          <h4>On-page Booking</h4>
-          <p class="small">Students can request a trial, get a unique booking code, or message you directly on WhatsApp.</p>
-        </div>
-        <div class="card">
-          <h4>Packages & Pricing</h4>
-          <p class="small">Sections for hourly rates, term packages, group sessions and special exam bundles.</p>
-        </div>
-        <div class="card">
-          <h4>Gallery & Proof</h4>
-          <p class="small">Placeholders for before & after results, past paper screenshots, and short testimonial videos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- PACKAGES -->
-  <section id="packages" style="margin-top:18px">
-    <div class="card">
-      <div class="section-title"><div class="dot"></div><h3 style="margin:0">Packages (example)</h3></div>
+<!-- DEMO START -->
+<div id="demoStart" class="demo-start">📌 DEMO START – This is only a preview</div>
 
-      <div class="packages">
-        <div class="plan">
-          <div style="font-weight:800">Starter</div>
-          <div class="price">R349 — Setup once</div>
-          <div class="features small">One page, WhatsApp link, basic gallery</div>
-          <div class="features small" style="margin-top:8px">Good for single-subject tutors</div>
-        </div>
+<div class="section">
+    <h2>Your Name Here</h2>
+    <p><i>“Helping learners achieve better marks, one lesson at a time.”</i></p>
+</div>
 
-        <div class="plan">
-          <div style="font-weight:800">Standard</div>
-          <div class="price">R399 — Setup once</div>
-          <div class="features small">Multi-section, booking code, price table</div>
-          <div class="features small" style="margin-top:8px">Includes QR printable</div>
-        </div>
+<div class="section">
+    <h3>About Me</h3>
+    <p>[This is where your tutor bio will appear – your experience, grades you teach, and style of teaching.]</p>
+</div>
 
-        <div class="plan">
-          <div style="font-weight:800">Premium</div>
-          <div class="price">R699 — Setup once</div>
-          <div class="features small">Interactive schedule, downloads, priority support</div>
-          <div class="features small" style="margin-top:8px">Perfect for exam season & group classes</div>
-        </div>
-      </div>
+<div class="section">
+    <h3>Subjects Offered</h3>
+    <ul>
+        <li>Mathematics</li>
+        <li>Physical Science</li>
+        <li>English</li>
+        <li>Accounting</li>
+    </ul>
+</div>
 
-      <div style="margin-top:12px" class="small">Monthly maintenance: <strong>R150/month</strong> — covers all updates, image edits, pricing, promos, QR & ongoing support.</div>
-    </div>
-  </section>
+<div class="section">
+    <h3>Available Times</h3>
+    <p>Monday – Friday</p>
+    <p>15:00 – 20:00</p>
+    <p>Saturday Optional</p>
+</div>
 
-  <!-- SCHEDULE & BOOKING (interactive) -->
-  <section id="schedule" style="margin-top:18px">
-    <div class="card">
-      <div class="section-title"><div class="dot"></div><h3 style="margin:0">Weekly Schedule (placeholder)</h3></div>
-      <div class="small" style="margin-top:8px">Tap a slot to preview showing as taken/free. (This demo stores bookings locally on your device.)</div>
+<div class="section">
+    <h3>Reviews From Parents</h3>
+    <p>[Placeholder: “My child improved from 50% to 70% in one term!”]</p>
+</div>
 
-      <div class="schedule" id="slots">
-        <!-- slots injected by JS -->
-      </div>
+<!-- DEMO END -->
+<div class="demo-end">📌 DEMO END – Real website will be fully customised</div>
 
-      <div class="booking-box">
-        <div style="display:flex;gap:12px;align-items:center">
-          <div>
-            <div style="font-weight:800">Generate Booking Code</div>
-            <div class="small">Give students a 6-digit code to reserve a trial slot — code expires in the demo after chosen minutes.</div>
-          </div>
-          <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
-            <input id="expiryMins" type="number" value="30" min="5" max="1440" style="width:78px;padding:8px;border-radius:8px;border:1px solid #e6eef9" />
-            <button class="btn btn-primary" onclick="generateCode()">Initiate</button>
-          </div>
-        </div>
 
-        <div id="bookingResult" style="margin-top:12px"></div>
-      </div>
-    </div>
-  </section>
+<!-- CONTACT SECTION -->
+<div class="section">
+    <h2>Contact Me</h2>
+    <p>If you like this demo and want your own website, contact me below:</p>
+    <a href="https://wa.me/0719756891" class="contact-btn">Message Me on WhatsApp</a>
+</div>
 
-  <!-- QR & CONTACT -->
-  <section style="margin-top:18px">
-    <div class="card">
-      <div style="display:flex;gap:12px;align-items:center">
-        <div class="qr">QR</div>
-        <div>
-          <div style="font-weight:900">Print-ready QR placeholder</div>
-          <div class="small" style="margin-top:6px">Place this QR at your gate or poster. People who can't scan can click your WhatsApp link on social media.</div>
-          <div style="margin-top:10px">
-            <a class="btn btn-primary" href="https://wa.me/27719756891" target="_blank">Message: 071 975 6891</a>
-            <button class="btn btn-ghost" onclick="copyPitch()">Copy Pitch</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- TESTIMONIALS -->
-  <section style="margin-top:18px">
-    <div class="card">
-      <div class="section-title"><div class="dot"></div><h3 style="margin:0">Testimonials (placeholders)</h3></div>
-
-      <div class="testimonials">
-        <div class="test">
-          <div style="font-weight:800">Parent — L. Mokoena</div>
-          <div class="small">"My child improved from 48% to 75% in 6 weeks. Highly recommend." (image placeholder)</div>
-        </div>
-
-        <div class="test">
-          <div style="font-weight:800">Student — Z. Khumalo</div>
-          <div class="small">"Clear lessons and helpful past paper sessions. Book a trial!"</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section style="margin-top:18px">
-    <div class="card">
-      <div class="section-title"><div class="dot"></div><h3 style="margin:0">FAQ</h3></div>
-      <div style="margin-top:10px" class="small">
-        <strong>Q:</strong> Do students pay through the site?<br>
-        <strong>A:</strong> No — the site shares your contact & booking code. Payments handled in person or via your chosen method.<br><br>
-
-        <strong>Q:</strong> Will my site be live on Google?<br>
-        <strong>A:</strong> I submit to Google Search Console and optimize basic SEO, but results may take days to appear.<br><br>
-
-        <strong>Q:</strong> Who pays for the domain?<br>
-        <strong>A:</strong> Typically the tutor buys the domain (I can help). You can also include it in a package.
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" style="margin-top:18px">
-    <div class="card">
-      <div style="display:flex;align-items:center;gap:12px;justify-content:space-between">
-        <div>
-          <div style="font-weight:900">Ready to get your demo?</div>
-          <div class="small" style="margin-top:6px">First 5 sites setup free. Ongoing support R150/month. I handle images, pricing edits, promos, QR and logo.</div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-weight:800">Contact</div>
-          <div class="small">WhatsApp: <strong>071 975 6891</strong></div>
-          <div style="margin-top:8px">
-            <a class="btn btn-primary" href="https://wa.me/27719756891" target="_blank">Message Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © 2025 TutorPro — Demo. Replace placeholders with client content. Built for Acode preview.
-</footer>
-
-<script>
-/* Smooth scroll */
-function scrollTo(id){document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'});}
-
-/* Slots demo (local offline) */
-const defaultSlots = [
-  {id:'M-16-17','label':'Mon 16:00-17:00', taken:false},
-  {id:'T-10-11','label':'Tue 10:00-11:00', taken:false},
-  {id:'W-15-16','label':'Wed 15:00-16:00', taken:false},
-  {id:'Th-17-18','label':'Thu 17:00-18:00', taken:false},
-  {id:'F-14-15','label':'Fri 14:00-15:00', taken:false},
-  {id:'Sa-09-10','label':'Sat 09:00-10:00', taken:false}
-];
-
-function loadSlots(){
-  let slots = JSON.parse(localStorage.getItem('tp_slots')) || defaultSlots;
-  const container = document.getElementById('slots');
-  container.innerHTML = '';
-  slots.forEach(s=>{
-    const el = document.createElement('div');
-    el.className = 'slot ' + (s.taken ? 'taken' : 'free');
-    el.dataset.id = s.id;
-    el.innerHTML = `<div style="font-weight:800">${s.label}</div><div class="small">${s.taken ? 'Booked' : 'Available'}</div>`;
-    el.onclick = ()=>togglePreview(s.id);
-    container.appendChild(el);
-  });
-}
-function togglePreview(id){
-  let slots = JSON.parse(localStorage.getItem('tp_slots')) || defaultSlots;
-  const s = slots.find(x=>x.id===id);
-  if(!s) return;
-  const confirmMsg = s.taken ? "This slot is currently taken in the demo. Clear demo booking?" : "Preview will mark this slot as taken in the demo. Continue?";
-  if(!confirm(confirmMsg)) return;
-  s.taken = !s.taken;
-  localStorage.setItem('tp_slots', JSON.stringify(slots));
-  loadSlots();
-}
-
-/* Booking code generator with expiry local demo */
-function generateCode(){
-  const mins = parseInt(document.getElementById('expiryMins').value) || 30;
-  const code = 'TP' + Math.floor(100000 + Math.random()*900000);
-  const now = Date.now();
-  const expiresAt = now + mins*60*1000;
-  const payload = {code,expiresAt};
-  localStorage.setItem('tp_booking', JSON.stringify(payload));
-  showBooking(payload);
-  // optional auto-copy
-  navigator.clipboard?.writeText(code);
-}
-function showBooking(payload){
-  const out = document.getElementById('bookingResult');
-  if(!payload){ out.innerHTML=''; return; }
-  const expires = new Date(payload.expiresAt);
-  out.innerHTML = `
-    <div style="display:flex;gap:12px;align-items:center">
-      <div style="font-weight:900">${payload.code}</div>
-      <div class="small">Expires: ${expires.toLocaleString()}</div>
-      <button class="btn btn-ghost" onclick="copyToClipboard('${payload.code}')">Copy code</button>
-    </div>
-    <div style="margin-top:8px" id="timer">Time left: --:--</div>
-  `;
-  startTimer(payload.expiresAt);
-}
-function copyToClipboard(t){ navigator.clipboard?.writeText(t); alert('Code copied'); }
-
-/* Timer */
-let timerInterval = null;
-function startTimer(expiresAt){
-  clearInterval(timerInterval);
-  function tick(){
-    const now = Date.now();
-    const diff = expiresAt - now;
-    const el = document.getElementById('timer');
-    if(!el) return;
-    if(diff<=0){ el.innerText='Expired'; clearInterval(timerInterval); localStorage.removeItem('tp_booking'); return;}
-    const mins = Math.floor(diff/60000);
-    const secs = Math.floor((diff%60000)/1000);
-    el.innerText = `Time left: ${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
-  }
-  tick();
-  timerInterval = setInterval(tick,1000);
-}
-
-/* Load any saved booking */
-(function init(){
-  loadSlots();
-  const existing = JSON.parse(localStorage.getItem('tp_booking'));
-  if(existing){ showBooking(existing); }
-})();
-
-/* Download mockup (simple canvas image) */
-function downloadMockup(anchorId){
-  // render a basic canvas snapshot
-  const w = 1200, h = 700;
-  const canvas = document.createElement('canvas'); canvas.width=w; canvas.height=h;
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,w,h);
-  ctx.fillStyle='#0f1724'; ctx.font='28px Arial'; ctx.fillText('TutorPro Demo Snapshot',28,48);
-  ctx.fillStyle='#eef6ff'; ctx.fillRect(28,68,w-56,160);
-  ctx.fillStyle='#6b7280'; ctx.font='16px Arial'; ctx.fillText('This is a mockup snapshot. Use screenshots for real previews.',40,120);
-  const a = document.createElement('a'); a.href = canvas.toDataURL('image/png'); a.download = 'tutorpro-mockup.png';
-  document.body.appendChild(a); a.click(); a.remove();
-}
-
-/* Copy pitch */
-const pitch = `Hi, I build simple websites for tutors that show subjects, schedule and let students request trial lessons. First 5 setups are free — ongoing support R150/month (updates, images, pricing, promos, QR, logo). Want a quick demo?`;
-function copyPitch(){ navigator.clipboard?.writeText(pitch).then(()=> alert('Pitch copied to clipboard')); }
-</script>
+<!-- PAYMENT SECTION -->
+<div class="payment-box">
+    <h3>Payment Methods (Local SA Only)</h3>
+    <p>✔ Ewallet</p>
+    <p>✔ CashSend</p>
+    <p>✔ Cash (if local)</p>
+    <p style="margin-top: 12px; font-weight: bold;">
+        Payment is only needed *after* your 7-day trial.
+    </p>
+</div>
 
 </body>
 </html>
